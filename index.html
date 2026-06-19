@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TS EAMCET College Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>TS EAMCET College Predictor</h1>
+    <p>Find a college based on your rank</p>
+  </header>
+
+  <hr>
+
+  <div class="container">
+
+    <h2>Enter Your Details</h2>
+
+    <label for="rank">EAMCET Rank:</label>
+    <input type="text" id="rank" placeholder="Enter your rank"><br><br>
+
+    <label for="category">Category:</label>
+    <select id="category">
+      <option>OC</option>
+      <option>BC-A</option>
+      <option>BC-B</option>
+      <option>BC-C</option>
+      <option>BC-D</option>
+      <option>BC-E</option>
+      <option>SC</option>
+      <option>ST</option>
+    </select><br><br>
+
+    <label for="gender">Gender:</label>
+    <select id="gender">
+      <option>Male</option>
+      <option>Female</option>
+    </select><br><br>
+
+    <label for="branch">Preferred Branch:</label>
+    <select id="branch">
+      <option>CSE</option>
+      <option>ECE</option>
+      <option>EEE</option>
+      <option>Mechanical</option>
+      <option>Civil</option>
+    </select><br><br>
+
+    <button>Predict College</button>
+    <button>Reset</button>
+
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h2>Results</h2>
+    <p>Your predicted colleges will be shown here.</p>
+
+    <table border="1">
+      <tr>
+        <th>College Name</th>
+        <th>Branch</th>
+        <th>Closing Rank</th>
+      </tr>
+      <tr>
+        <td>Sample College 1</td>
+        <td>CSE</td>
+        <td>12000</td>
+      </tr>
+      <tr>
+        <td>Sample College 2</td>
+        <td>ECE</td>
+        <td>18000</td>
+      </tr>
+    </table>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>This is a basic project made for learning purpose.</p>
+  </footer>
+
+</body>
+</html>
