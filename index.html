@@ -1,88 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TS EAMCET College Predictor</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML Learning Lab · Home</title>
+  <!-- Link to separate CSS file -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="app-container">
 
-  <header>
-    <h1>TS EAMCET College Predictor</h1>
-    <p>Find a college based on your rank</p>
+  <!-- ====== TOP BANNER AD ====== -->
+  <div class="ad-banner-top">
+    <div class="ad-label">— Advertisement —</div>
+    <div class="ad-placeholder">
+      <span>📢 Google Ad (728×90)</span>
+    </div>
+  </div>
+
+  <!-- header / branding -->
+  <header class="app-header">
+    <div class="logo">
+      <span class="brain-icon">🧠</span>
+      <span class="logo-text">ML Learning Lab</span>
+    </div>
+    <div class="header-tagline">experiment · understand · build</div>
   </header>
 
-  <hr>
+  <!-- main hero / intro -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Learn ML by experimenting with your own data</h1>
+      <p class="hero-sub">
+        interactive notebooks · AI tutor · code explanations · visualizations
+      </p>
+      <div class="hero-cta">
+        <a href="#topics" class="cta-badge">🔥 start with a topic</a>
+      </div>
+    </div>
+  </section>
 
-  <div class="container">
+  <!-- ====== MAIN CONTENT WITH SIDEBAR AD ====== -->
+  <div class="content-row">
 
-    <h2>Enter Your Details</h2>
+    <!-- MAIN COLUMN -->
+    <div class="main-column">
 
-    <label for="rank">EAMCET Rank:</label>
-    <input type="text" id="rank" placeholder="Enter your rank"><br><br>
+      <!-- topic grid : choose a model (all cards are anchor tags) -->
+      <section class="topic-grid-section" id="topics">
+        <h2 class="section-title">choose a topic</h2>
+        <div class="topic-grid">
+          <a href="linear.html" class="topic-card" data-topic="linear">
+            <span class="topic-icon">📈</span>
+            <h3>Linear Regression</h3>
+            <p>predict continuous values · find the line</p>
+            <span class="card-footer">→ explore</span>
+          </a>
+          <a href="#" class="topic-card" data-topic="polynomial">
+            <span class="topic-icon">〰️</span>
+            <h3>Polynomial Regression</h3>
+            <p>fit curves · control overfitting</p>
+            <span class="card-footer">→ explore</span>
+          </a>
+          <a href="#" class="topic-card" data-topic="logistic">
+            <span class="topic-icon">🎯</span>
+            <h3>Logistic Regression</h3>
+            <p>binary classification · probability</p>
+            <span class="card-footer">→ explore</span>
+          </a>
+          <a href="#" class="topic-card" data-topic="multinomial">
+            <span class="topic-icon">🏷️</span>
+            <h3>Multinomial Logistic</h3>
+            <p>multiple classes · softmax</p>
+            <span class="card-footer">→ explore</span>
+          </a>
+          <a href="#" class="topic-card" data-topic="regularization">
+            <span class="topic-icon">⚖️</span>
+            <h3>Regularization</h3>
+            <p>ridge · lasso · shrink weights</p>
+            <span class="card-footer">→ explore</span>
+          </a>
+          <a href="#" class="topic-card" data-topic="gradient">
+            <span class="topic-icon">⬇️</span>
+            <h3>Gradient Descent</h3>
+            <p>optimization · learning rate</p>
+            <span class="card-footer">→ explore</span>
+          </a>
+        </div>
+      </section>
 
-    <label for="category">Category:</label>
-    <select id="category">
-      <option>OC</option>
-      <option>BC-A</option>
-      <option>BC-B</option>
-      <option>BC-C</option>
-      <option>BC-D</option>
-      <option>BC-E</option>
-      <option>SC</option>
-      <option>ST</option>
-    </select><br><br>
+      <!-- ====== IN-CONTENT AD ====== -->
+      <div class="ad-in-content">
+        <div class="ad-label">— Sponsored —</div>
+        <div class="ad-placeholder">
+          <span>📢 Google Ad (responsive)</span>
+        </div>
+      </div>
 
-    <label for="gender">Gender:</label>
-    <select id="gender">
-      <option>Male</option>
-      <option>Female</option>
-    </select><br><br>
+      <!-- AI tutor / explain my code snippet -->
+      <section class="ai-tutor-section">
+        <div class="ai-tutor-card">
+          <div class="ai-icon">🤖</div>
+          <div>
+            <h3>AI tutor · explain my code</h3>
+            <p class="ai-sub">paste any ML snippet and get line‑by‑line explanation</p>
+          </div>
+          <div class="ai-input-wrap">
+            <input type="text" placeholder='e.g. model = LogisticRegression(C=0.1)' class="ai-input" value="model.fit(X_train, y_train)" />
+            <a href="#" class="ai-explain-btn">explain</a>
+          </div>
+          <div class="ai-example-output">
+            <div class="ai-line"><span class="code">model.fit(X_train, y_train)</span> <span class="arrow">→</span> trains the model using training data</div>
+          </div>
+        </div>
+      </section>
 
-    <label for="branch">Preferred Branch:</label>
-    <select id="branch">
-      <option>CSE</option>
-      <option>ECE</option>
-      <option>EEE</option>
-      <option>Mechanical</option>
-      <option>Civil</option>
-    </select><br><br>
+    </div>
+    <!-- /main-column -->
 
-    <button>Predict College</button>
-    <button>Reset</button>
+    <!-- ====== SIDEBAR AD ====== -->
+    <aside class="sidebar-ads">
+      <div class="ad-sidebar">
+        <div class="ad-label">— Ad —</div>
+        <div class="ad-placeholder sidebar-ad-box">
+          <span>📢 Google Ad<br />(300×250)</span>
+        </div>
+      </div>
+      <div class="ad-sidebar">
+        <div class="ad-label">— Ad —</div>
+        <div class="ad-placeholder sidebar-ad-box">
+          <span>📢 Google Ad<br />(300×250)</span>
+        </div>
+      </div>
+    </aside>
 
   </div>
+  <!-- /content-row -->
 
-  <hr>
-
-  <div class="container">
-    <h2>Results</h2>
-    <p>Your predicted colleges will be shown here.</p>
-
-    <table border="1">
-      <tr>
-        <th>College Name</th>
-        <th>Branch</th>
-        <th>Closing Rank</th>
-      </tr>
-      <tr>
-        <td>Sample College 1</td>
-        <td>CSE</td>
-        <td>12000</td>
-      </tr>
-      <tr>
-        <td>Sample College 2</td>
-        <td>ECE</td>
-        <td>18000</td>
-      </tr>
-    </table>
+  <!-- ====== BOTTOM BANNER AD ====== -->
+  <div class="ad-banner-bottom">
+    <div class="ad-label">— Advertisement —</div>
+    <div class="ad-placeholder">
+      <span>📢 Google Ad (728×90)</span>
+    </div>
   </div>
 
-  <hr>
-
-  <footer>
-    <p>This is a basic project made for learning purpose.</p>
+  <!-- footer -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <span>🧠 ML Learning Lab · built with React · FastAPI · scikit-learn</span>
+      <span class="footer-tag">learn one concept → turn it into a feature</span>
+    </div>
   </footer>
 
+</div>
+<!-- /app-container -->
 </body>
 </html>
