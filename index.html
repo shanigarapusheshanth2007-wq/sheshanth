@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-adsense-account" content="ca-pub-9079513582356664">
-  <title>ML Learning Lab · Home</title>
+  <title>ML Learning Lab · Linear Regression</title>
   <!-- Link to separate CSS file -->
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google AdSense Main Script -->
+  <link rel="stylesheet" href="linear.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9079513582356664"
      crossorigin="anonymous"></script>
 </head>
@@ -17,15 +16,9 @@
   <!-- ====== TOP BANNER AD ====== -->
   <div class="ad-banner-top">
     <div class="ad-label">— Advertisement —</div>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-9079513582356664"
-         data-ad-slot="auto"
-         data-ad-format="horizontal"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <div class="ad-placeholder">
+      <span>📢 Google Ad (728×90)</span>
+    </div>
   </div>
 
   <!-- header / branding -->
@@ -34,100 +27,124 @@
       <span class="brain-icon">🧠</span>
       <span class="logo-text">ML Learning Lab</span>
     </div>
-    <div class="header-tagline">experiment · understand · build</div>
+    <div class="header-tagline">linear regression · explore</div>
   </header>
 
-  <!-- main hero / intro -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <h1>Learn ML by experimenting with your own data</h1>
-      <p class="hero-sub">
-        interactive notebooks · AI tutor · code explanations · visualizations
-      </p>
-      <div class="hero-cta">
-        <a href="#topics" class="cta-badge">🔥 start with a topic</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== MAIN CONTENT WITH SIDEBAR AD ====== -->
+  <!-- ====== MAIN CONTENT ====== -->
   <div class="content-row">
 
     <!-- MAIN COLUMN -->
     <div class="main-column">
 
-      <!-- topic grid : choose a model (all cards are anchor tags) -->
-      <section class="topic-grid-section" id="topics">
-        <h2 class="section-title">choose a topic</h2>
-        <div class="topic-grid">
-          <a href="linear.html" class="topic-card" data-topic="linear">
-            <span class="topic-icon">📈</span>
-            <h3>Linear Regression</h3>
-            <p>predict continuous values · find the line</p>
-            <span class="card-footer">→ explore</span>
-          </a>
-          <a href="#" class="topic-card" data-topic="polynomial">
-            <span class="topic-icon">〰️</span>
-            <h3>Polynomial Regression</h3>
-            <p>fit curves · control overfitting</p>
-            <span class="card-footer">→ explore</span>
-          </a>
-          <a href="#" class="topic-card" data-topic="logistic">
-            <span class="topic-icon">🎯</span>
-            <h3>Logistic Regression</h3>
-            <p>binary classification · probability</p>
-            <span class="card-footer">→ explore</span>
-          </a>
-          <a href="#" class="topic-card" data-topic="multinomial">
-            <span class="topic-icon">🏷️</span>
-            <h3>Multinomial Logistic</h3>
-            <p>multiple classes · softmax</p>
-            <span class="card-footer">→ explore</span>
-          </a>
-          <a href="#" class="topic-card" data-topic="regularization">
-            <span class="topic-icon">⚖️</span>
-            <h3>Regularization</h3>
-            <p>ridge · lasso · shrink weights</p>
-            <span class="card-footer">→ explore</span>
-          </a>
-          <a href="#" class="topic-card" data-topic="gradient">
-            <span class="topic-icon">⬇️</span>
-            <h3>Gradient Descent</h3>
-            <p>optimization · learning rate</p>
-            <span class="card-footer">→ explore</span>
-          </a>
+      <!-- breadcrumb / back -->
+      <div class="breadcrumb">
+        <a href="index.html" class="back-link">← back to topics</a>
+        <span class="breadcrumb-divider">/</span>
+        <span class="breadcrumb-current">Linear Regression</span>
+      </div>
+
+      <!-- topic hero -->
+      <section class="topic-hero">
+        <div class="topic-hero-icon">📈</div>
+        <h1>Linear Regression</h1>
+        <p class="topic-hero-sub">predict continuous values · find the best‑fit line</p>
+      </section>
+
+      <!-- interactive demo -->
+      <section class="demo-section">
+        <h2 class="section-title">interactive demo</h2>
+        <div class="demo-card">
+          <div class="demo-visual">
+            <!-- simulated chart placeholder -->
+            <div class="chart-container">
+              <div class="chart-grid">
+                <div class="chart-point" style="bottom: 20%; left: 15%;"></div>
+                <div class="chart-point" style="bottom: 35%; left: 30%;"></div>
+                <div class="chart-point" style="bottom: 50%; left: 45%;"></div>
+                <div class="chart-point" style="bottom: 65%; left: 60%;"></div>
+                <div class="chart-point" style="bottom: 80%; left: 75%;"></div>
+                <div class="chart-point" style="bottom: 30%; left: 20%;"></div>
+                <div class="chart-point" style="bottom: 55%; left: 50%;"></div>
+                <div class="chart-point" style="bottom: 70%; left: 70%;"></div>
+                <!-- trend line -->
+                <div class="trend-line" style="bottom: 15%; left: 5%; width: 80%; height: 3px; background: #1e4a6b; position: absolute; transform: rotate(12deg); transform-origin: left center; border-radius: 4px;"></div>
+              </div>
+              <div class="chart-label">y →</div>
+              <div class="chart-label-bottom">x →</div>
+            </div>
+          </div>
+          <div class="demo-controls">
+            <div class="control-group">
+              <label for="slope">slope (m)</label>
+              <input type="range" id="slope" min="0" max="2" step="0.05" value="0.8" />
+              <span class="control-value" id="slope-value">0.80</span>
+            </div>
+            <div class="control-group">
+              <label for="intercept">intercept (b)</label>
+              <input type="range" id="intercept" min="0" max="5" step="0.1" value="2.5" />
+              <span class="control-value" id="intercept-value">2.50</span>
+            </div>
+            <div class="equation-display">
+              <span class="equation-label">y = </span>
+              <span class="equation-slope" id="eq-slope">0.80</span>
+              <span class="equation-x">x</span>
+              <span class="equation-sign">+</span>
+              <span class="equation-intercept" id="eq-intercept">2.50</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- ====== IN-CONTENT AD ====== -->
       <div class="ad-in-content">
         <div class="ad-label">— Sponsored —</div>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9079513582356664"
-             data-ad-slot="auto"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        <div class="ad-placeholder">
+          <span>📢 Google Ad (responsive)</span>
+        </div>
       </div>
 
-      <!-- AI tutor / explain my code snippet -->
-      <section class="ai-tutor-section">
-        <div class="ai-tutor-card">
-          <div class="ai-icon">🤖</div>
-          <div>
-            <h3>AI tutor · explain my code</h3>
-            <p class="ai-sub">paste any ML snippet and get line‑by‑line explanation</p>
+      <!-- concept explanation -->
+      <section class="concept-section">
+        <h2 class="section-title">how it works</h2>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <span class="concept-icon">🎯</span>
+            <h3>Goal</h3>
+            <p>Find the line that minimizes the sum of squared errors between predictions and actual values.</p>
           </div>
-          <div class="ai-input-wrap">
-            <input type="text" placeholder='e.g. model = LogisticRegression(C=0.1)' class="ai-input" value="model.fit(X_train, y_train)" />
-            <a href="#" class="ai-explain-btn">explain</a>
+          <div class="concept-card">
+            <span class="concept-icon">📐</span>
+            <h3>Equation</h3>
+            <p><strong>y = m·x + b</strong> where <em>m</em> is slope and <em>b</em> is intercept.</p>
           </div>
-          <div class="ai-example-output">
-            <div class="ai-line"><span class="code">model.fit(X_train, y_train)</span> <span class="arrow">→</span> trains the model using training data</div>
+          <div class="concept-card">
+            <span class="concept-icon">⚡</span>
+            <h3>Key idea</h3>
+            <p>Simple, interpretable, and often a great starting point for regression problems.</p>
           </div>
+        </div>
+      </section>
+
+      <!-- code snippet -->
+      <section class="code-section">
+        <h2 class="section-title">code example</h2>
+        <div class="code-block">
+          <pre><code><span class="code-keyword">from</span> sklearn.linear_model <span class="code-keyword">import</span> LinearRegression
+<span class="code-keyword">from</span> sklearn.model_selection <span class="code-keyword">import</span> train_test_split
+
+<span class="code-comment"># create and train model</span>
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+<span class="code-comment"># make predictions</span>
+predictions = model.predict(X_test)
+
+<span class="code-comment"># evaluate</span>
+<span class="code-keyword">print</span>(<span class="code-string">f"R² score: {model.score(X_test, y_test):.3f}"</span>)</code></pre>
+        </div>
+        <div class="code-actions">
+          <a href="#" class="code-btn">▶ run in notebook</a>
+          <a href="#" class="code-btn">📋 copy code</a>
         </div>
       </section>
 
@@ -138,27 +155,23 @@
     <aside class="sidebar-ads">
       <div class="ad-sidebar">
         <div class="ad-label">— Ad —</div>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9079513582356664"
-             data-ad-slot="auto"
-             data-ad-format="rectangle"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        <div class="ad-placeholder sidebar-ad-box">
+          <span>📢 Google Ad<br />(300×250)</span>
+        </div>
       </div>
       <div class="ad-sidebar">
         <div class="ad-label">— Ad —</div>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9079513582356664"
-             data-ad-slot="auto"
-             data-ad-format="rectangle"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        <div class="ad-placeholder sidebar-ad-box">
+          <span>📢 Google Ad<br />(300×250)</span>
+        </div>
+      </div>
+      <div class="ad-sidebar">
+        <div class="ad-label">— Resources —</div>
+        <div class="resource-box">
+          <a href="#" class="resource-link">📘 scikit-learn docs</a>
+          <a href="#" class="resource-link">📊 visualize with matplotlib</a>
+          <a href="#" class="resource-link">🧮 gradient descent explainer</a>
+        </div>
       </div>
     </aside>
 
@@ -168,15 +181,9 @@
   <!-- ====== BOTTOM BANNER AD ====== -->
   <div class="ad-banner-bottom">
     <div class="ad-label">— Advertisement —</div>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-9079513582356664"
-         data-ad-slot="auto"
-         data-ad-format="horizontal"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <div class="ad-placeholder">
+      <span>📢 Google Ad (728×90)</span>
+    </div>
   </div>
 
   <!-- footer -->
@@ -189,5 +196,28 @@
 
 </div>
 <!-- /app-container -->
+
+<script>
+  // Interactive slider updates
+  const slopeSlider = document.getElementById('slope');
+  const interceptSlider = document.getElementById('intercept');
+  const slopeVal = document.getElementById('slope-value');
+  const interceptVal = document.getElementById('intercept-value');
+  const eqSlope = document.getElementById('eq-slope');
+  const eqIntercept = document.getElementById('eq-intercept');
+
+  function updateEquation() {
+    const s = parseFloat(slopeSlider.value);
+    const b = parseFloat(interceptSlider.value);
+    slopeVal.textContent = s.toFixed(2);
+    interceptVal.textContent = b.toFixed(2);
+    eqSlope.textContent = s.toFixed(2);
+    eqIntercept.textContent = b.toFixed(2);
+  }
+
+  slopeSlider.addEventListener('input', updateEquation);
+  interceptSlider.addEventListener('input', updateEquation);
+  updateEquation();
+</script>
 </body>
 </html>
