@@ -23,15 +23,17 @@ body {
   padding: 1.5rem 2rem 1rem;
 }
 
-/* ===== ADS ===== */
+/* ===== ADS (ADSENSE COMPATIBLE) ===== */
 .ad-banner-top,
 .ad-banner-bottom {
-  background: #f1f5f9;
+  background: #f8fafc;
   border-radius: 1.5rem;
   padding: 0.5rem 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  border: 1px dashed #cbd5e1;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  min-height: 90px; /* Reserves space to prevent page layout jumping */
 }
 
 .ad-banner-bottom {
@@ -43,17 +45,17 @@ body {
   font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #64748b;
-  margin-bottom: 0.2rem;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+  display: block;
 }
 
-.ad-placeholder {
-  background: #e9eef3;
-  border-radius: 1rem;
-  padding: 0.5rem 0;
-  color: #475569;
-  font-weight: 500;
-  font-size: 0.9rem;
+/* Styles for actual Google AdSense <ins> tags */
+ins.adsbygoogle {
+  display: block !important;
+  background: transparent !important;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 /* ===== HEADER ===== */
@@ -230,15 +232,12 @@ body {
 .ad-in-content {
   background: #f8fafc;
   border-radius: 1.5rem;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 1rem;
   margin: 1.5rem 0 2rem;
   border: 1px solid #e2e8f0;
   text-align: center;
-}
-
-.ad-in-content .ad-placeholder {
-  background: transparent;
-  padding: 0.2rem 0;
+  overflow: hidden;
+  min-height: 100px;
 }
 
 /* ===== AI TUTOR ===== */
@@ -343,18 +342,11 @@ body {
 .ad-sidebar {
   background: #f8fafc;
   border-radius: 1.5rem;
-  padding: 0.8rem 0.5rem 0.5rem;
+  padding: 0.8rem 0.5rem 0.8rem;
   border: 1px solid #e2e8f0;
   text-align: center;
-}
-
-.sidebar-ad-box {
-  padding: 1.8rem 0.5rem;
-  background: #edf2f7;
-  border-radius: 1rem;
-  margin-top: 0.2rem;
-  font-weight: 500;
-  color: #334e68;
+  overflow: hidden;
+  min-height: 280px; /* Space for standard 300x250 rectangle ads */
 }
 
 /* ===== FOOTER ===== */
@@ -392,7 +384,7 @@ body {
     justify-content: center;
   }
   .ad-sidebar {
-    flex: 1 1 200px;
+    flex: 1 1 280px;
   }
   .app-container {
     padding: 1rem;
@@ -415,7 +407,7 @@ body {
   }
   .app-header {
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 0.3rem;
   }
 }
