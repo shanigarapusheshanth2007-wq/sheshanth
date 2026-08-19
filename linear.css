@@ -1,122 +1,3 @@
-/* ===== RESET & BASE ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #f6f9fc;
-  color: #1e293b;
-  line-height: 1.5;
-  padding: 1rem;
-}
-
-.app-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 2rem;
-  box-shadow: 0 20px 60px rgba(0, 20, 40, 0.08);
-  overflow: hidden;
-  padding: 1.5rem 2rem 1rem;
-}
-
-/* ===== ADS (ADSENSE COMPATIBLE) ===== */
-.ad-banner-top,
-.ad-banner-bottom {
-  background: #f8fafc;
-  border-radius: 1.5rem;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  border: 1px solid #e2e8f0;
-  overflow: hidden;
-  min-height: 90px;
-}
-
-.ad-banner-bottom {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.ad-label {
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #94a3b8;
-  margin-bottom: 0.4rem;
-  display: block;
-}
-
-ins.adsbygoogle {
-  display: block !important;
-  background: transparent !important;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-/* ===== HEADER ===== */
-.app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0.5rem 0 0.5rem;
-  border-bottom: 1px solid #e9edf2;
-  margin-bottom: 1.5rem;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-}
-
-.brain-icon {
-  font-size: 1.8rem;
-}
-
-.logo-text {
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: -0.02em;
-  background: linear-gradient(145deg, #0b2b4a, #1e4a6b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.header-tagline {
-  font-size: 0.8rem;
-  background: #eef2f6;
-  padding: 0.3rem 0.8rem;
-  border-radius: 30px;
-  color: #2c3e50;
-  letter-spacing: 0.02em;
-}
-
-/* ===== CONTENT ROW ===== */
-.content-row {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.main-column {
-  flex: 3;
-  min-width: 0;
-}
-
-.sidebar-ads {
-  flex: 0 0 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
 /* ===== BREADCRUMB ===== */
 .breadcrumb {
   display: flex;
@@ -172,15 +53,6 @@ ins.adsbygoogle {
 }
 
 /* ===== DEMO SECTION ===== */
-.section-title {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #475569;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
 .demo-section {
   margin-bottom: 2rem;
 }
@@ -323,18 +195,6 @@ ins.adsbygoogle {
   margin: 0 0.2rem;
 }
 
-/* ===== IN-CONTENT AD ===== */
-.ad-in-content {
-  background: #f8fafc;
-  border-radius: 1.5rem;
-  padding: 0.8rem 1rem;
-  margin: 1.5rem 0 2rem;
-  border: 1px solid #e2e8f0;
-  text-align: center;
-  overflow: hidden;
-  min-height: 100px;
-}
-
 /* ===== CONCEPT SECTION ===== */
 .concept-section {
   margin-bottom: 2rem;
@@ -428,16 +288,6 @@ ins.adsbygoogle {
 }
 
 /* ===== SIDEBAR ===== */
-.ad-sidebar {
-  background: #f8fafc;
-  border-radius: 1.5rem;
-  padding: 0.8rem 0.5rem 0.8rem;
-  border: 1px solid #e2e8f0;
-  text-align: center;
-  overflow: hidden;
-  min-height: 280px;
-}
-
 .resource-box {
   padding: 0.8rem 0.3rem;
   display: flex;
@@ -459,46 +309,8 @@ ins.adsbygoogle {
   text-decoration: underline;
 }
 
-/* ===== FOOTER ===== */
-.app-footer {
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e9edf2;
-  text-align: center;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  color: #475569;
-}
-
-.footer-tag {
-  background: #eef2f6;
-  padding: 0.1rem 1rem;
-  border-radius: 40px;
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .content-row {
-    flex-direction: column;
-  }
-  .sidebar-ads {
-    flex: 1;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .ad-sidebar {
-    flex: 1 1 280px;
-  }
-  .app-container {
-    padding: 1rem;
-  }
   .demo-card {
     flex-direction: column;
   }
@@ -510,11 +322,6 @@ ins.adsbygoogle {
 @media (max-width: 500px) {
   .concept-grid {
     grid-template-columns: 1fr;
-  }
-  .app-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.3rem;
   }
   .control-group {
     flex-wrap: wrap;
